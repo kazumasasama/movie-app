@@ -4,3 +4,6 @@ actor = Actor.new(first_name: "Nathan", last_name: "Fillion", known_for: "Firefl
 actor.save
 
 rails g controller actors
+
+
+rails g controller movies

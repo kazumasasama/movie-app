@@ -11,7 +11,14 @@
 #   actor.save
 # end
 
+# 3.times do
+#   actor = Actor.new({first_name: FFaker::NameJA.first_name, last_name: FFaker::NameJA.last_name, known_for: FFaker::Name.name_with_prefix})
+#   actor.save
+# end
+
+year = 2000
 3.times do
-  actor = Actor.new({first_name: FFaker::NameJA.first_name, last_name: FFaker::NameJA.last_name, known_for: FFaker::Name.name_with_prefix})
+  actor = Movie.new({title: FFaker::Movie.title, year: year, plot: FFaker::Lorem.paragraph})
   actor.save
+  year += 1
 end
