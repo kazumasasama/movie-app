@@ -1,0 +1,15 @@
+# query params
+http://localhost:3000/actors?id=8
+
+###
+#segment params
+http://localhost:3000/actors/7
+
+###
+#body params
+POST http://localhost:3000/actors
+Content-Type: application/json
+
+{
+  "id": 6
+}

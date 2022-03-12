@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  get "actors/:id" => "actors#show"
+  get "/actors" => "actors#show" # query
+  get "/actors/:id" => "actors#show" # segment
+  post "/actors" => "actors#show" # body
 
   get "/movies" => "movies#index"
   get "/movie/:id" => "movies#show"
