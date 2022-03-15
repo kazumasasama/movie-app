@@ -1,15 +1,76 @@
-# query params
-http://localhost:3000/actors?id=8
+# # query params
+# http://localhost:3000/actors?id=8
 
-###
-#segment params
-http://localhost:3000/actors/7
+# ###
+# #segment params
+# http://localhost:3000/actors/7
 
-###
-#body params
+# ###
+# #body params
+# POST http://localhost:3000/actors
+# Content-Type: application/json
+
+# {
+#   "id": 6
+# }
+
+# Movies
+### index
+http://localhost:3000/movies
+
+### show
+http://localhost:3000/movies/1
+
+### create
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+  "title": "Lock, Stock and Two Smoking Barrels",
+  "year": 1998,
+  "plot": "In London, long-time friends and small-time criminals Eddie, Tom, Soap, and Bacon put together £100,000 so that Eddie, a genius card sharp, can buy into one of..."
+}
+
+### update
+PATCH http://localhost:3000/movies/1
+Content-Type: application/json
+
+{
+  "title": "Snatch",
+  "year": 2000,
+  "plot": "After stealing an 86-carat (17.2 g) diamond while dressed as an ultra-Orthodox Jew during a heist in Antwerp..."
+}
+
+### delete
+DELETE http://localhost:3000/movies/11
+
+
+# Actors
+### index
+http://localhost:3000/actors
+
+### show
+http://localhost:3000/actors/12
+
+### create
 POST http://localhost:3000/actors
 Content-Type: application/json
 
 {
-  "id": 6
+  "first_name": "Nick",
+  "last_name": "Moran",
+  "known_for": "Eddie"
 }
+
+### update
+PATCH http://localhost:3000/actors/11
+Content-Type: application/json
+
+{
+  "first_name": "Jason",
+  "last_name": "Flemyng",
+  "known_for": "Tom"
+}
+
+### delete
+DELETE http://localhost:3000/actors/9
