@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
     if movie.save
       render json: movie.as_json
     else
-      render json: {message: "Error..."}
+      render json: movie.errors, status: :unprocessable_entity
     end
   end
 
