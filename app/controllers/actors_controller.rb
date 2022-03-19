@@ -21,7 +21,7 @@ class ActorsController < ApplicationController
     if actor.save
       render json: actor.as_json
     else
-      render json: actor.errors, status: :unprocessable_entity
+      render json: actor.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -35,7 +35,7 @@ class ActorsController < ApplicationController
     if actor.save
       render json: {message: "ID: #{actor.id} has been updated!"}
     else
-      render json: actor.errors, status: :bad_request
+      render json: actor.errors.full_messages, status: :bad_request
     end
   end
 

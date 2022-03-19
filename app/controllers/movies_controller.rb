@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
     if movie.save
       render json: movie.as_json
     else
-      render json: movie.errors, status: :unprocessable_entity
+      render json: movie.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
     if @movie.update(movie_params)
       render json: @movie.as_json
     else
-      render json: @movie.errors, status: :bad_request
+      render json: @movie.errors.full_messages, status: :bad_request
     end
   end
 
