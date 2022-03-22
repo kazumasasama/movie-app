@@ -105,3 +105,36 @@ Content-Type: application/json
 {
   "year": 1500
 }
+
+#  must have .json
+### test serializer
+http://localhost:3000/actors.json
+
+###
+http://localhost:3000/actors/11.json
+
+###
+POST http://localhost:3000/actors
+Content-Type: application/json
+
+{
+  "first_name": "Nick",
+  "last_name": "Moran",
+  "known_for": "Eddie",
+  "age": 30,
+  "gender": "Male",
+  "movie_id": 4
+}
+
+###
+PATCH http://localhost:3000/actors/13
+Content-Type: application/json
+
+{
+  "first_name": "Nn",
+  "last_name": "Mm",
+  "known_for": "Ee",
+  "age": 14,
+  "gender": "M",
+  "movie_id": 1
+}

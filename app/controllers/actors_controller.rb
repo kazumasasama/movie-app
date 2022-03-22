@@ -1,13 +1,13 @@
 class ActorsController < ApplicationController
 
   def index
-    actors = Actor.all
-    render json: actors.as_json
+    @actors = Actor.all
+    render :template => "actors/index"
   end
 
   def show
-    actor = Actor.find(params[:id])
-    render json: actor.as_json
+    @actor = Actor.find(params[:id])
+    render template: "actors/show"
   end
 
   def create
@@ -44,7 +44,7 @@ class ActorsController < ApplicationController
   def destroy
     actor = Actor.find(params[:id])
     actor.destroy
-    render json: {message: "ID: #{actor.id} has been updated!"}
+    render json: {message: "ID: #{actor.id} DELETED!"}
   end
 
 end
