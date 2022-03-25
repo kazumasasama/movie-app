@@ -16,10 +16,10 @@
 
 # Movies
 ### index
-http://localhost:3000/movies
+http://localhost:3000/movies.json
 
 ### show
-http://localhost:3000/movies/1
+http://localhost:3000/movies/1.json
 
 ### create
 POST http://localhost:3000/movies
@@ -47,19 +47,23 @@ DELETE http://localhost:3000/movies/11
 
 # Actors
 ### index
-http://localhost:3000/actors
+http://localhost:3000/actors.json
 
 ### show
-http://localhost:3000/actors/12
+http://localhost:3000/actors/12.json
 
 ### create
-POST http://localhost:3000/actors
+POST http://localhost:3000/actors.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDgzMDE1OTl9.zoT7VA-f7p1YQGdeBP5MvoOU-T0QTtPkLxnPRqbB-48
 Content-Type: application/json
 
 {
   "first_name": "Nick",
   "last_name": "Moran",
-  "known_for": "Eddie"
+  "known_for": "Eddie",
+  "age": 30,
+  "gender": "Male",
+  "movie_id": 4
 }
 
 ### update
@@ -83,40 +87,6 @@ Content-Type: application/json
   "year": 1500
 }
 
-#  must have .json
-### test serializer
-http://localhost:3000/actors.json
-
-###
-http://localhost:3000/actors/11.json
-
-###
-POST http://localhost:3000/actors
-Content-Type: application/json
-
-{
-  "first_name": "Nick",
-  "last_name": "Moran",
-  "known_for": "Eddie",
-  "age": 30,
-  "gender": "Male",
-  "movie_id": 4
-}
-
-###
-PATCH http://localhost:3000/actors/13
-Content-Type: application/json
-
-{
-  "first_name": "Nn",
-  "last_name": "Mm",
-  "known_for": "Ee",
-  "age": 14,
-  "gender": "M",
-  "movie_id": 1
-}
-
-
 ### Users create (signup)
 POST http://localhost:3000/users.json
 Content-Type: application/json
@@ -133,6 +103,6 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "em@il.com",
+  "email": "test@test.com",
   "password": "password"
 }

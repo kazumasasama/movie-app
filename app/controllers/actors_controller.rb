@@ -1,8 +1,10 @@
 class ActorsController < ApplicationController
 
+  before_action :authenticate_admin, except: %i[index show]
+  
   def index
     @actors = Actor.all
-    render :template => "actors/index"
+    render template: "actors/index"
   end
 
   def show
