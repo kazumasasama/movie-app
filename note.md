@@ -7,3 +7,5 @@ rails g controller actors
 
 
 rails g controller movies
+
+rails g migration AddAdminToUser
