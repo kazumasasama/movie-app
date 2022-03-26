@@ -1,6 +1,8 @@
 class Movie < ApplicationRecord
 
   has_many :actors #returns array of many actors
+  has_many :movie_genres
+  has_many :genres, through: :movie_genres
 
   validates :title, presence: true
   validates :year, numericality: { only_integer: true, greater_than: 1800}

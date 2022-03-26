@@ -2,12 +2,12 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: %i[show update destroy]
 
   def index
-    movies = Movie.all
-    render json: movies.as_json
+    @movies = Movie.all
+    render template: "movies/index"
   end
 
   def show
-    render json: @movie.as_json
+    render template: "movies/show"
   end
 
   def create

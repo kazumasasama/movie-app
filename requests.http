@@ -19,7 +19,7 @@
 http://localhost:3000/movies.json
 
 ### show
-http://localhost:3000/movies/1.json
+http://localhost:3000/movies/6.json
 
 ### create
 POST http://localhost:3000/movies
