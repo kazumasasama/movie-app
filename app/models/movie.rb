@@ -9,4 +9,11 @@ class Movie < ApplicationRecord
   validates :plot, length: { maximum: 6000 }
   validates :english, presence: true
   
+  def genre_names
+    genre_names = []
+    movie_genres.each do |genre|
+      genre_names << Genre.find(genre.genre_id).name
+    end
+    genre_names
+  end
 end
